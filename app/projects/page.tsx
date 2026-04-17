@@ -46,14 +46,9 @@ export default function ProjectsPage() {
                 transition={{ delay: project.delay, duration: 0.5 }}
                 className="group relative"
               >
-                <div className="aspect-[4/3] bg-navy relative border-4 border-transparent group-hover:border-orange transition-colors duration-300 flex items-center justify-center p-6 text-center">
-                  <h3 className="text-white font-heading text-3xl uppercase opacity-80 group-hover:opacity-0 transition-opacity duration-300">{project.title}</h3>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-orange/95 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-center items-center text-center p-6 z-20">
-                    <span className="text-navy font-bold tracking-widest text-xs uppercase mb-2 opacity-80">{project.category}</span>
-                    <h3 className="text-navy font-heading text-3xl uppercase">{project.title}</h3>
-                  </div>
+                <div className="aspect-[4/3] bg-navy relative border-[6px] border-orange flex flex-col items-center justify-center p-6 text-center shadow-md">
+                  <span className="text-orange font-bold tracking-widest text-xs uppercase mb-3 opacity-90">{project.category}</span>
+                  <h3 className="text-white font-heading text-4xl uppercase opacity-95 leading-tight">{project.title}</h3>
                 </div>
               </motion.div>
             ))}
