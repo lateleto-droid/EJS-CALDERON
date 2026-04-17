@@ -7,12 +7,13 @@ interface AnimatedCounterProps {
   endValue: number;
   suffix?: string;
   duration?: number;
+  decimals?: number;
 }
 
-export default function AnimatedCounter({ endValue, suffix = '', duration = 2000 }: AnimatedCounterProps) {
+export default function AnimatedCounter({ endValue, suffix = '', duration = 2000, decimals = 0 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true });
 
   useEffect(() => {
     if (!isInView) return;
@@ -21,9 +22,10 @@ export default function AnimatedCounter({ endValue, suffix = '', duration = 2000
     const animateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
-      
+
       if (progress < duration) {
-        setCount(Math.floor((endValue * progress) / duration));
+        const currentVal = (endValue * progress) / duration;
+        setCount(currentVal);
         requestAnimationFrame(animateCount);
       } else {
         setCount(endValue);
@@ -35,7 +37,7 @@ export default function AnimatedCounter({ endValue, suffix = '', duration = 2000
 
   return (
     <span ref={ref}>
-      {count}{suffix}
+      {count.toFixed(decimals)}{suffix}
     </span>
   );
 }

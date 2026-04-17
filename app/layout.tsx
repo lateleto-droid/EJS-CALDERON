@@ -3,7 +3,6 @@ import { Inter, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import AnimatedCursor from '@/components/AnimatedCursor';
 import BackToTop from '@/components/BackToTop';
 
 const inter = Inter({
@@ -35,7 +34,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className={`${inter.variable} ${bebas.variable}`}>
       <body className="font-sans text-steel antialiased min-h-screen flex flex-col" suppressHydrationWarning>
-        <AnimatedCursor />
         <Navbar />
         <main className="flex-grow flex flex-col">
           {children}

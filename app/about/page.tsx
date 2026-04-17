@@ -3,7 +3,6 @@
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import { Target, Shield, Users, Trophy } from 'lucide-react';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 import AnimatedDivider from '@/components/AnimatedDivider';
 
 export default function AboutPage() {
@@ -66,9 +65,11 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-orange transform translate-x-4 translate-y-4 -z-10 clip-diagonal" />
-                <div className="bg-navy aspect-[3/4] relative p-8">
-                  <div className="relative w-full h-full">
-                    <ImagePlaceholder className="absolute inset-0" prompt="construction workers team jobsite hardhats professional realistic bright" text="Team or Jobsite Photo" />
+                <div className="bg-navy aspect-[3/4] relative p-8 flex items-center justify-center text-center">
+                  <div className="relative w-full h-full border-2 border-[#13243f] flex flex-col items-center justify-center">
+                    <span className="text-orange font-bold tracking-widest uppercase mb-2">EJS Calderon</span>
+                    <h3 className="text-white font-heading text-4xl uppercase opacity-80 mb-2">Construction</h3>
+                    <p className="text-steel font-bold tracking-widest text-xs uppercase opacity-80">Middletown, NY</p>
                   </div>
                 </div>
               </div>

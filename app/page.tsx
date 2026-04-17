@@ -31,10 +31,10 @@ export default function Home() {
   ];
 
   const stats = [
-    { label: 'Years Experience', value: 15, suffix: '+' },
-    { label: 'Projects Completed', value: 250, suffix: '+' },
-    { label: 'Clients Served', value: 180, suffix: '+' },
-    { label: 'Average Rating', value: 5.0, suffix: '' },
+    { label: 'Years Experience', value: 15, suffix: '+', decimals: 0 },
+    { label: 'Projects Completed', value: 250, suffix: '+', decimals: 0 },
+    { label: 'Clients Served', value: 180, suffix: '+', decimals: 0 },
+    { label: 'Average Rating', value: 5.0, suffix: '', decimals: 1 },
   ];
 
   const reviews = [
@@ -114,7 +114,7 @@ export default function Home() {
         {stats.map((stat, i) => (
           <div key={i} className={`flex-1 flex flex-col justify-center px-[40px] py-6 md:py-0 ${i !== stats.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#eee]' : ''} ${i === stats.length -1 ? 'bg-[#fcfcfc]' : ''}`}>
             <span className="text-navy font-heading text-[40px] font-black leading-none mb-1">
-              <AnimatedCounter endValue={stat.value} suffix={stat.suffix} />
+              <AnimatedCounter endValue={stat.value} suffix={stat.suffix} decimals={stat.decimals} />
             </span>
             <span className="text-steel font-bold uppercase tracking-[1px] text-[11px]">{stat.label}</span>
           </div>

@@ -42,9 +42,5 @@
 }
 
 html, body {
-  cursor: none; /* We will use a custom cursor */
-}
-
-a:hover, button:hover, input:focus, textarea:focus, select:focus {
-  cursor: none;
+  /* Default cursor restored */
 }

@@ -2,7 +2,6 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
-import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function ProjectsPage() {
   const projects = [
@@ -45,16 +44,15 @@ export default function ProjectsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: project.delay, duration: 0.5 }}
-                className="group relative cursor-none"
+                className="group relative"
               >
-                {/* Image Placeholder */}
-                <div className="aspect-[4/3] bg-navy relative overflow-hidden border-4 border-transparent group-hover:border-orange transition-colors duration-300">
-                  <ImagePlaceholder className="absolute inset-0" prompt={`construction project ${project.title} photorealistic architecture`} text={project.title} />
+                <div className="aspect-[4/3] bg-navy relative border-4 border-transparent group-hover:border-orange transition-colors duration-300 flex items-center justify-center p-6 text-center">
+                  <h3 className="text-white font-heading text-3xl uppercase opacity-80 group-hover:opacity-0 transition-opacity duration-300">{project.title}</h3>
                   
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-orange/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-end p-6 z-20">
-                    <span className="text-white font-bold tracking-widest text-xs uppercase mb-1 opacity-80">{project.category}</span>
-                    <h3 className="text-white font-heading text-3xl uppercase">{project.title}</h3>
+                  <div className="absolute inset-0 bg-orange/95 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-center items-center text-center p-6 z-20">
+                    <span className="text-navy font-bold tracking-widest text-xs uppercase mb-2 opacity-80">{project.category}</span>
+                    <h3 className="text-navy font-heading text-3xl uppercase">{project.title}</h3>
                   </div>
                 </div>
               </motion.div>
