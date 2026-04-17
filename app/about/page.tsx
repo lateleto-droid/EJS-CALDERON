@@ -66,8 +66,10 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-orange transform translate-x-4 translate-y-4 -z-10 clip-diagonal" />
-                <div className="bg-navy aspect-[3/4] flex items-center justify-center p-8">
-                  <ImagePlaceholder className="w-full h-full border-none" text="Team or Jobsite Photo" />
+                <div className="bg-navy aspect-[3/4] relative p-8">
+                  <div className="relative w-full h-full">
+                    <ImagePlaceholder className="absolute inset-0" prompt="construction workers team jobsite hardhats professional realistic bright" text="Team or Jobsite Photo" />
+                  </div>
                 </div>
               </div>
             </div>

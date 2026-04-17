@@ -74,47 +74,43 @@ export default function ServicesPage() {
       {/* Services List */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="space-y-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {allServices.map((service, i) => {
               const Icon = service.icon;
               return (
-                <div key={service.id} id={service.id} className={`flex flex-col md:flex-row gap-12 items-start ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}>
-                  
-                  {/* Service Image Placeholder */}
-                  <div className="w-full md:w-1/2">
-                    <div className="aspect-[4/3] bg-gray-100 flex pb-0 relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-navy bg-opacity-80 flex flex-col items-center justify-center border-2 border-dashed border-orange m-4 z-10 transition-opacity duration-300">
-                        <Icon className="w-16 h-16 text-white mb-4 opacity-50" />
-                        <span className="text-white font-bold tracking-wider text-sm uppercase">[ Add {service.title} Photo ]</span>
-                      </div>
-                      <div className="absolute top-0 right-0 p-4 bg-orange text-white font-heading text-4xl z-20">
-                        {String(i + 1).padStart(2, '0')}
-                      </div>
-                    </div>
+                <div key={service.id} id={service.id} className="flex flex-col bg-gray-50 border-t-[6px] border-orange p-10 lg:p-12 shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow duration-300">
+                  <div className="absolute top-0 right-[-10%] text-[180px] font-heading text-navy/5 leading-none pointer-events-none select-none z-0 transform group-hover:scale-110 transition-transform duration-500">
+                    {String(i + 1).padStart(2, '0')}
                   </div>
-
+                  
                   {/* Service Info */}
-                  <div className="w-full md:w-1/2 flex flex-col justify-center pt-8">
-                    <h2 className="text-navy font-heading text-4xl md:text-5xl uppercase mb-6 flex items-center gap-4">
-                      {service.title}
-                    </h2>
-                    <p className="text-steel text-lg mb-8 leading-relaxed">
+                  <div className="w-full flex flex-col pt-4 relative z-10">
+                    <div className="flex items-center gap-6 mb-8">
+                      <div className="bg-navy w-16 h-16 flex items-center justify-center shrink-0">
+                        <Icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h2 className="text-navy font-heading text-4xl md:text-5xl uppercase leading-tight">
+                        {service.title}
+                      </h2>
+                    </div>
+                    
+                    <p className="text-steel text-lg mb-10 leading-relaxed max-w-2xl">
                       {service.desc}
                     </p>
                     
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 mb-12">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <div className="w-2 h-2 bg-orange mt-2 flex-shrink-0" />
-                          <span className="text-navy font-bold">{feature}</span>
+                        <li key={idx} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-orange mt-[6px] flex-shrink-0" />
+                          <span className="text-navy font-bold text-[15px]">{feature}</span>
                         </li>
                       ))}
                     </ul>
 
-                    <div>
-                      <Link href="/contact" className="inline-flex items-center gap-2 bg-navy hover:bg-orange text-white font-bold py-4 px-8 uppercase tracking-wider transition-colors duration-300 group">
+                    <div className="mt-auto pt-6 border-t border-gray-200">
+                      <Link href="/contact" className="inline-flex items-center gap-2 text-navy hover:text-orange font-black uppercase tracking-[2px] transition-colors duration-300 group/link">
                         Get Estimate
-                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>

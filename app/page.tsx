@@ -104,13 +104,7 @@ export default function Home() {
 
         {/* Hero BG Image Placeholder */}
         <div className="hidden md:flex w-[40%] bg-[#0d1e33] border-l border-white/5 items-center justify-center relative clip-placeholder overflow-hidden">
-          <div className="border-2 border-dashed border-orange p-[40px] flex flex-col items-center text-center text-white z-10 w-3/4 max-w-sm">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-            <span className="mt-[15px] text-[12px] uppercase tracking-[1px] opacity-70">[ Add Featured Project Photo ]</span>
-          </div>
+          <ImagePlaceholder className="absolute inset-0" prompt="epic dynamic construction site building structure crane wide angle cinematic" text="Hero Background" />
         </div>
       </section>
 

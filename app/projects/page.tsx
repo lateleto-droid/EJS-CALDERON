@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import ImagePlaceholder from '@/components/ImagePlaceholder';
 
 export default function ProjectsPage() {
   const projects = [
@@ -48,15 +49,10 @@ export default function ProjectsPage() {
               >
                 {/* Image Placeholder */}
                 <div className="aspect-[4/3] bg-navy relative overflow-hidden border-4 border-transparent group-hover:border-orange transition-colors duration-300">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center border-2 border-dashed border-steel m-2">
-                    <span className="text-gray-400 font-bold tracking-wider text-xs uppercase mb-2">Project Image</span>
-                    <span className="text-white font-bold tracking-widest text-lg uppercase bg-orange/20 px-4 py-2 border border-orange">
-                      [ Add Photo Here ]
-                    </span>
-                  </div>
+                  <ImagePlaceholder className="absolute inset-0" prompt={`construction project ${project.title} photorealistic architecture`} text={project.title} />
                   
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-orange/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-end p-6">
+                  <div className="absolute inset-0 bg-orange/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-end p-6 z-20">
                     <span className="text-white font-bold tracking-widest text-xs uppercase mb-1 opacity-80">{project.category}</span>
                     <h3 className="text-white font-heading text-3xl uppercase">{project.title}</h3>
                   </div>
