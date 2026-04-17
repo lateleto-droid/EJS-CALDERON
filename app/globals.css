@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A1628;
+  --color-navy-hover: #13243f;
+  --color-orange: #E8620A;
+  --color-orange-hover: #ff7700;
+  --color-steel: #4A5568;
+  --font-heading: 'Arial Narrow', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, sans-serif;
+}
+
+@layer utilities {
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  }
+  .clip-diagonal-reverse {
+    clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+  }
+  .clip-placeholder {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .bg-blueprint {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .bg-caution {
+    background: repeating-linear-gradient(
+      45deg,
+      #FFD700,
+      #FFD700 10px,
+      #000 10px,
+      #000 20px
+    );
+  }
+  .pattern-dots {
+    background-image: radial-gradient(#E8620A 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+html, body {
+  cursor: none; /* We will use a custom cursor */
+}
+
+a:hover, button:hover, input:focus, textarea:focus, select:focus {
+  cursor: none;
+}
